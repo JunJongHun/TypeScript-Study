@@ -28,6 +28,7 @@ console.log(sumArray([1, 2, 3, 4]));
 class Circle {
     constructor(radius) {
         this.radius = radius;
+        this.radius = radius;
     }
     getArea() {
         console.log("동그라미");
@@ -38,6 +39,8 @@ class Rectangle {
     constructor(width, height) {
         this.width = width;
         this.height = height;
+        this.width = width;
+        this.height = height;
     }
     getArea() {
         console.log("직사각형");
@@ -46,3 +49,6 @@ class Rectangle {
 }
 const shapes = [new Circle(5), new Rectangle(10, 5)];
 shapes.forEach((shape) => console.log(shape.getArea()));
+const person = {
+    name: "김사람",
+};
