@@ -92,31 +92,87 @@
 
 // console.log(typeof person, typeof expert);
 
-type Person = {
-  name: string;
-  age?: number;
-};
+// type Person = {
+//   name: string;
+//   age?: number;
+// };
 
-type Developer = Person & {
-  skills: string[];
-};
+// type Developer = Person & {
+//   skills: string[];
+// };
 
-const person: Person = {
-  name: "김사람",
-};
+// const person: Person = {
+//   name: "김사람",
+// };
 
-const expert: Developer = {
-  name: "Jun",
-  age: 24,
-  skills: ["react", "recoil", "axios"],
-};
+// const expert: Developer = {
+//   name: "Jun",
+//   age: 24,
+//   skills: ["react", "recoil", "axios"],
+// };
 
-type People = Person[];
+// type People = Person[];
 
-const people: People = [person, expert];
+// const people: People = [person, expert];
 
-// let color: "red" | "blue" = "red";
-type Color = "red" | "blue";
-const color: Color = "blue";
+// // let color: "red" | "blue" = "red";
+// type Color = "red" | "blue";
+// const color: Color = "blue";
 
-const colors: Color[] = ["red", "blue"];
+// const colors: Color[] = ["red", "blue"];
+
+// function merge<A, B>(a: A, b: B): A & B {
+//   return { ...a, ...b };
+// }
+
+// const merged = merge<string, string>("1", "1");
+// console.log(merged);
+
+// function wrap<T>(param: T): Object {
+//   return {
+//     param,
+//   };
+// }
+
+// const wrapped = wrap(10);
+
+// // console.log(wrapped);
+
+// interface Items<T> {
+//   list: T[];
+// }
+
+// type Items2<T> = {
+//   list: T[];
+// };
+
+// const items: Items<string> = { list: ["s", "s", "c"] };
+// const items2: Items<number> = { list: [1, 2, 3] };
+
+class Queue<T> {
+  list: T[];
+  constructor() {
+    this.list = [];
+  }
+
+  get length() {
+    return this.list.length;
+  }
+
+  enqueue(item: T) {
+    this.list.push(item);
+  }
+
+  dequeue() {
+    return this.list.shift();
+  }
+}
+
+const queue = new Queue<string>();
+queue.enqueue("1");
+queue.enqueue("2");
+queue.enqueue("3");
+console.log(queue.list);
+queue.dequeue();
+queue.dequeue();
+console.log(queue.list);
